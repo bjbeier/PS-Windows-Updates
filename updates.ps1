@@ -37,7 +37,7 @@ if (!(Get-Command "Get-WindowsUpdate" -ErrorAction SilentlyContinue)) {
 # Get available application updates using Winget, format as a table and install
 Write-Output "
 Checking for available application updates."
-$wingetUpdates = winget upgrade
+$wingetUpdates = winget upgrade --accept-source-agreements
 if ($wingetUpdates -match "No installed package found matching input criteria.") {
     Write-Output "
 No application updates available."
